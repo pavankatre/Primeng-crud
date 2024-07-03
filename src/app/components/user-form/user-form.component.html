@@ -1,0 +1,97 @@
+<div class="card flex justify-content-center">
+  <p-toast></p-toast>
+</div>
+<!-- <div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+      <div
+        *ngIf="userForm.get('firstName').invalid && (userForm.get('firstName').dirty || userForm.get('firstName').touched)"
+        class="text-danger">
+        First Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+      <div
+        *ngIf="userForm.get('lastName').invalid && (userForm.get('lastName').dirty || userForm.get('lastName').touched)"
+        class="text-danger">
+        Last Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" formControlName="age" required>
+      <div *ngIf="userForm.get('age').invalid && (userForm.get('age').dirty || userForm.get('age').touched)"
+        class="text-danger">
+        <div *ngIf="userForm.get('age').errors.required">Age is required.</div>
+        <div *ngIf="userForm.get('age').errors.min">Age must be at least 18.</div>
+        <div *ngIf="userForm.get('age').errors.max">Age must be at most 70.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+      <div *ngIf="userForm.get('email').invalid && (userForm.get('email').dirty || userForm.get('email').touched)"
+        class="text-danger">
+        <div *ngIf="userForm.get('email').errors.required">Email is required.</div>
+        <div *ngIf="userForm.get('email').errors.email">Email must be a valid email address.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    
+  </form>
+</div> -->
+<div class="p-3 d-flex justify-content-end">
+  <p-button label="User list" severity="success" (click)="navList()" [rounded]="true" />
+</div>
+
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+      <div
+        *ngIf="userForm.get('firstName').invalid && (userForm.get('firstName').dirty || userForm.get('firstName').touched)"
+        class="text-danger">
+        First Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+      <div
+        *ngIf="userForm.get('lastName').invalid && (userForm.get('lastName').dirty || userForm.get('lastName').touched)"
+        class="text-danger">
+        Last Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" formControlName="age" required>
+      <div *ngIf="userForm.get('age').invalid && (userForm.get('age').dirty || userForm.get('age').touched)"
+        class="text-danger">
+        <div *ngIf="userForm.get('age').errors.required">Age is required.</div>
+        <div *ngIf="userForm.get('age').errors.min">Age must be at least 18.</div>
+        <div *ngIf="userForm.get('age').errors.max">Age must be at most 70.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+      <div *ngIf="userForm.get('email').invalid && (userForm.get('email').dirty || userForm.get('email').touched)"
+        class="text-danger">
+        <div *ngIf="userForm.get('email').errors.required">Email is required.</div>
+        <div *ngIf="userForm.get('email').errors.email">Email must be a valid email address.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+

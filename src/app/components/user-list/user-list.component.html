@@ -1,0 +1,80 @@
+<app-topbar></app-topbar>
+<p-confirmDialog />
+<p-toast />
+
+<div class="container container-left-btn">
+  <div class="p-3 d-flex justify-content-end">
+    <p-button label="User Graph" severity="success" (click)="navGraph()" [rounded]="true"></p-button>
+    <p-button label="Add User" severity="success" (click)="showDialog()" [rounded]="true"></p-button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="container">
+    <p-table #dt1 [value]="users" [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+      selectionMode="single" [(selection)]="selectedCustomers" dataKey="id" [tableStyle]="{ 'min-width': '50rem' }"
+      [rows]="5" [paginator]="true" stateStorage="session" stateKey="statedemo-session">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="firstName" style="width:25%">
+            First Name <p-sortIcon field="firstName" />
+          </th>
+          <th pSortableColumn="lastName" style="width:25%">
+            Last Name <p-sortIcon field="lastName" />
+          </th>
+          <th pSortableColumn="age" style="width:25%">
+            Age <p-sortIcon field="age" />
+          </th>
+          <th pSortableColumn="email" style="width:25%">
+            Email <p-sortIcon field="email" />
+          </th>
+          <th pSortableColumn="delete" style="width:25%">
+            Uapdate / Delete <p-sortIcon field="delete" />
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-customer>
+        <tr [pSelectableRow]="customer">
+
+          <td>
+            <span class="p-column-title">Name</span>
+            {{ customer.firstName}}
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+        <tr [pSelectableRow]="customer">
+          <td>
+            <span class="p-column-title">First Name</span>
+            {{ customer.firstName }}
+          </td>
+          <td>
+            <span class="p-column-title">Last Name</span>
+            {{ customer.lastName }}
+          </td>
+          <td>
+            <span class="p-column-title">Email</span>
+            {{ customer.age }}
+          </td>
+          <td>
+            <span class="p-column-title">Age</span>
+            {{ customer.email }}
+          </td>
+         
+          <td class="update-delete-btn">
+            <p-button label="Update" severity="success" (click)="updateUser(customer.id, customer)" [rounded]="true"></p-button>
+            <p-button label="Delete" severity="danger" (click)="removeUser(customer.id)" [rounded]="true"></p-button>
+          </td>
+          
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="4">No customers found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

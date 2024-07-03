@@ -1,0 +1,10 @@
+
+<div class="p-3 d-flex justify-content-end">
+    <p-button label="User List" severity="success" (click)="navList()" [rounded]="true" />
+</div>
+<div class="container " >
+    <p> This chart visually represents filtered age data. The chart is configured to display counts of users across different age ranges (18-30, 31-50, and 51-70) using bars, each representing the number of users falling within that age range.</p>
+    <div class="card ">
+        <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+    </div>
+</div>
